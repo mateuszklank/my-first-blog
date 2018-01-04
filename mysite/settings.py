@@ -25,7 +25,9 @@ SECRET_KEY = '!#-)%s&7t4^p)7x69qdg+glrgs6%vey=hr#j%0l@qmg0*7v$c9'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    'quarionek.pythonanywhere.com',
+]
 
 
 # Application definition
