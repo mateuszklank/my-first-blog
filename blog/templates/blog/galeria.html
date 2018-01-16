@@ -1,0 +1,9 @@
+{% extends 'blog/base.html' %}
+
+{% block content %}
+    {% load static %}
+    <div>
+        <h1><a href="{% url 'galeria' %}">Galeria zdjęć</a></h1>
+    </div>
+    <img src="{% static "images/zdj1.jpg" %}" alt="zdjecie1_jpg"/>
+{% endblock %}

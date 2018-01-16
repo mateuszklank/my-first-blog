@@ -1,0 +1,16 @@
+{% extends 'blog/base.html' %}
+
+{% block content %}
+    {% load static %}
+    <img src="{% static "images/zdj.jpg" %}" alt="specjalisci_zdjecie_jpg"/>
+    <div>
+        <h1><a href="{% url 'lekarz_list' %}">Nasi specjaliści</a></h1>
+    </div>
+    {% for lekarz in lekarze %}
+        <div class="post">
+            <h1><a href="{% url 'lekarz_detail' pk=lekarz.pk %}">{{ lekarz.nazwisko }} {{ lekarz.imię }}</a></h1>
+            <p>{{ lekarz.specjalizacja|linebreaksbr }}</p>
+            <!--<p>{{ lekarz.opis|linebreaksbr }}</p>-->
+        </div>
+    {% endfor %}
+{% endblock %}

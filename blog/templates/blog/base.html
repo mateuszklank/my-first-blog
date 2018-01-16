@@ -1,7 +1,7 @@
 {% load staticfiles %}
 <html>
     <head>
-        <title>Django Girls blog</title>
+        <title>Szpital Kliniczny w Kielcach</title>
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
         <link href='//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
@@ -9,10 +9,13 @@
     </head>
     <body>
         <div class="page-header">
+            {% load static %}
+            <!--<img src="{% static "images/zdjecieszpital.jpg" %}" alt="zdjecie1_jpg"/>-->
             {% if user.is_authenticated %}
                 <a href="{% url 'post_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
+                <a href="{% url 'lekarz_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
             {% endif %}
-            <h1><a href="/">Django Girls Blog</a></h1>
+            <h1><a href="/">Szpital Kliniczny w Kielcach</a></h1>
         </div>
         <div class="content container">
             <div class="row">
@@ -21,6 +24,12 @@
                     {% endblock %}
                 </div>
             </div>
+        </div>
+        <div class="page-header">
+            <h1><a href="/">Rejestracja</a></h1>
+            <h1><a href="/admin">Logowanie</a></h1>
+            <h1><a href="/galeria">Galeria</a></h1>
+            <h1><a href="{% url 'lekarz_list' %}">Nasi specjaliści</a></h1>
         </div>
     </body>
 </html>

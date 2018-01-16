@@ -1,0 +1,11 @@
+{% extends 'blog/base.html' %}
+
+{% block content %}
+    <div class="post">
+        <a class="btn btn-default" href="{% url 'lekarz_edit' pk=lekarz.pk %}"><span class="glyphicon glyphicon-pencil"></span></a>
+        <h1>{{ lekarz.nazwisko }} {{ lekarz.imię }}</h1>
+        <h4>{{ lekarz.specjalizacja }}</h4>
+        <p>{{ lekarz.opis|linebreaksbr }}</p>
+        <h4>Koszt wizyty: {{ lekarz.cena }}</h4>
+    </div>
+{% endblock %}
